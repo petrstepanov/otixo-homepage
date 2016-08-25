@@ -1,0 +1,36 @@
+{
+  "name": "otixo-homepage",
+  "version": "1.0.0",
+  "description": "Otixo Marketing Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/petrstepanov/otixo-homepage.git"
+  },
+  "keywords": [
+    "otixo",
+    "homepage",
+    "marketing",
+    "website"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/petrstepanov/otixo-homepage/issues"
+  },
+  "homepage": "https://github.com/petrstepanov/otixo-homepage#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  },
+  "dependencies": {
+    "gulp-concat": "^2.6.0",
+    "gulp-less": "^3.1.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
+    "gulp-uglify": "^2.0.0"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "otixo-homepage",
+  "homepage": "https://www.otixo.com",
+  "authors": [
+    "Petr Stepanov <kisstherail@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "keywords": [
+    "otixo",
+    "homepage",
+    "marketing",
+    "website"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
