@@ -4,7 +4,7 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
     $(".banner .video-container").hide();
 }
 
-$('.banner').css('height', Math.max($( window ).height(), 710) + "px";
+$('.banner').css('height', Math.max($( window ).height(), 710) + "px");
 
 var slideout = new Slideout({
     'panel': document.getElementById('panel'),
@@ -13,6 +13,15 @@ var slideout = new Slideout({
     'tolerance': 70,
     'side': 'right'
 });
+
+slideout.on('beforeopen', function() {
+    $('body').addClass('my-slideout-open');
+});
+
+slideout.on('beforeclose', function() {
+    $('body').removeClass('my-slideout-open');
+});
+
 
 $('#mobile-trigger').click(function(event){
     event.stopPropagation();

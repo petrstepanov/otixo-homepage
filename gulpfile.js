@@ -13,10 +13,10 @@ var gulp = require('gulp'),
 
 gulp.task('scripts', function() {
     gulp.src(['./bower_components/jquery/dist/jquery.js',
-            //   './bower_components/bootstrap/dist/js/bootstrap.js',
+              './bower_components/bootstrap/dist/js/bootstrap.js',
               './bower_components/slideout.js/dist/slideout.js',
-            //   './js/vendor/jquery.fittext.js',
-            //   './js/main.js'
+              './js/vendor/jquery.fittext.js',
+              './js/main.js'
         ])
         .pipe(plumber()) // prevents breaking and has to go first here
         .pipe(concat('otixo-website.js'))
