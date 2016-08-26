@@ -1,0 +1,238 @@
+html {
+	-webkit-font-smoothing: antialiased;
+	//height: 100%;
+}
+
+body {
+	font-size: 16px;
+	// height: 100%;
+}
+
+.banner {
+	height: 100%;
+	max-height: @macbook-13-height;
+	background-color: #8b3d6l;
+	background-image: url('../img/clouds-bg.jpg');
+	background-size: cover;
+	background-position: center center;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	position: relative;
+	align-items: center;
+
+	@media (max-width: @screen-xs-max){
+		.container {
+			width: 100%;
+		}
+	}
+
+	.video-container {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		z-index: 10;
+
+		video {
+			/* Make video to at least 100% wide and tall */
+			min-width: 100%;
+			min-height: 100%;
+
+			/* Setting width & height to auto prevents the browser from stretching or squishing the video */
+			width: auto;
+			height: auto;
+
+			/* Center the video */
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+		}
+	}
+
+	&:before {
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(0,0,0,0.1);
+		z-index: 11;
+	}
+
+	&:after {
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		height: 25em;
+		#gradient > .vertical(white, transparent);
+		z-index: 12;
+	}
+
+	> *, header {
+		position: relative;
+		z-index: 100;
+	}
+
+	h1 {
+		padding: 0 0.5em;
+		font-family: @font-display;
+		font-size: @font-xxxxl;
+		color: white;
+		text-shadow: 0 6px 10px rgba(49,142,220,0.2);
+	}
+
+	p {
+		font-family: @font-bold;
+		font-size: @font-l;
+		color: white;
+		text-shadow: 0 6px 10px rgba(49,142,220,0.2);
+		padding: 0 1.5em;
+	}
+
+	button {
+		font-size: 1.5em;
+		margin: 8% 0 10% 0;
+		padding: 0.5em 2em;
+		.box-shadow(0 5px 10px 0 rgba(255,255,255,0.2));
+		min-height: 56px;
+
+		@media (max-width: @screen-xs-max){
+			margin-bottom: 20%;
+			min-height: 48px;
+			font-size: @font-l;
+		}
+	}
+}
+
+header {
+	align-items: center;
+	display: flex;
+	height: @header-height;
+	justify-content: space-between;
+
+	@media (max-width: @screen-xs-max){
+		justify-content: flex-start;
+	}
+
+	.logo {
+		height: @logo-height;
+		margin-bottom: 0.5em;
+
+		@media (max-width: @screen-xs-max){
+			height: @logo-height-xs;
+		}
+	}
+
+	.nav-link {
+		color: @darkgray;
+		// text-decoration: none;
+		transition: color @fast ease-out;
+		font-size: 0.875em;;
+		margin: 0.3em 1.7em 0 1.7em;
+		text-transform: uppercase;
+		letter-spacing: 0.2em;
+		font-family: @font-bold;
+
+		@media (max-width: @screen-md-max){
+			font-size: @font-s;
+		}
+
+		&:hover {
+			color: @teal;
+			text-decoration: none;
+		}
+	}
+
+	nav {
+		a {
+			.nav-link;
+			opacity: 0.6;
+
+			&:first-child {
+				margin-left: 0;
+			}
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+
+	.login-register-container {
+		background: white;
+		.box-shadow(0 0 0 2px @login-register-container-stroke);
+		height: @login-register-container-height;
+		line-height: @login-register-container-height;
+		border-radius: @login-register-container-height/2;
+		position: relative;
+		overflow: hidden;
+
+		&:before {
+			content: "";
+			width: 2px;
+			background-color: #dde3e8; //@login-register-container-stroke;
+			height: 4em;
+			transform: rotate(12deg);
+			position: absolute;
+			left: 54%;
+			top: -5%;
+		}
+
+		a {
+			.nav-link;
+			color: @teal;
+
+			&:hover {
+				color: darken(@teal,10%);
+			}
+		}
+	}
+}
+
+.mobile-menu-button {
+	background: white;
+	.box-shadow(0 0 0 2px @login-register-container-stroke);
+	height: @login-register-container-height;
+	width: @login-register-container-height;
+	line-height: @login-register-container-height*1.1;
+	border-radius: @login-register-container-height/2;
+	position: fixed;
+	right: 15px;
+	top: 2.1em;
+	display: block;
+	cursor: pointer;
+
+	@media (min-width: @screen-sm-min){
+		top: 2.5em;
+	}
+
+	&:hover {
+		text-decoration: none;
+
+		.hamburger {
+			opacity: 0.7;
+		}
+	}
+
+	z-index: 200;
+	text-align: center;
+	color: darken(#dde3e8, 20%);
+
+	.hamburger {
+		transform: scale(0.5) translateY(0.2em);
+	    opacity: 0.2;
+		padding: 0;
+
+		&:focus {
+			outline: none;
+		}
+	}
+}
