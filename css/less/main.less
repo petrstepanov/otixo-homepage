@@ -61,8 +61,12 @@ body {
 		top: 0;
 		right: 0;
 		bottom: 0;
-		background-color: rgba(0,0,0,0.1);
 		z-index: 11;
+		background-color: rgba(255,255,255,0.1);			
+
+		.white & {
+			background-color: rgba(0,0,0,0.1);
+		}
 	}
 
 	&:after {
@@ -85,16 +89,22 @@ body {
 		padding: 0 0.5em;
 		font-family: @font-display;
 		font-size: @font-xxxxl;
-		color: white;
-		text-shadow: 0 6px 10px rgba(49,142,220,0.2);
+
+		.white & {
+			color: white;
+			text-shadow: 0 6px 10px rgba(49,142,220,0.2);
+		}
 	}
 
 	p {
 		font-family: @font-bold;
 		font-size: @font-l;
-		color: white;
-		text-shadow: 0 6px 10px rgba(49,142,220,0.2);
 		padding: 0 1.5em;
+
+		.white & {
+			color: white;
+			text-shadow: 0 6px 10px rgba(49,142,220,0.2);
+		}
 	}
 
 	button {

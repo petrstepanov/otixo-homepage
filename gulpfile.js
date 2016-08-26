@@ -20,7 +20,7 @@ gulp.task('scripts', function() {
         ])
         .pipe(plumber()) // prevents breaking and has to go first here
         .pipe(concat('otixo-website.js'))
-        .pipe(uglify())
+//        .pipe(uglify())
         .pipe(rename({
             suffix: '.min'
         }))

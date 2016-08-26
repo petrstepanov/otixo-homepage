@@ -4,7 +4,15 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
     $(".banner .video-container").hide();
 }
 
-$('.banner').css('height', Math.max($( window ).height(), 710) + "px");
+function resizeBanner(){
+    $('.banner').css('height', Math.max(480, Math.min($( window ).height(), 710)) + "px");
+}
+
+resizeBanner();
+
+$( window ).resize(function() {
+    resizeBanner();
+});
 
 var slideout = new Slideout({
     'panel': document.getElementById('panel'),
